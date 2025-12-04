@@ -21,20 +21,51 @@
     @enderror
 </div>
 <div class="todo__content">
+    <div class="section__title">
+        <h2>新規作成</h2>
+    </div>
     <form action="/todos" method="post" class="create-form">
         @csrf
         <div class="create-form__item">
-            <input type="text" name="content" />
+            <input type="text" name="content" value="{{ old('content') }}" />
         </div>
+        <select name="category_id" class="create-form__item-select">
+            <option value="">カテゴリ</option>
+            @foreach($categories as $category)
+            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+            @endforeach
+        </select>
         <div class="create-form__button">
             <button type="submit">作成</button>
+        </div>
+    </form>
+
+    <div class="section__title">
+        <h2>Todo検索</h2>
+    </div>
+    <form action="/todos/search" method="get" class="search-form">
+        @csrf
+        <div class="search-form__item">
+            <input type="text" name="keyword" />
+        </div>
+        <select name="category_id" class="search-form__item-select">
+            <option value="">カテゴリ</option>
+            @foreach($categories as $category)
+            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+            @endforeach
+        </select>
+        <div class="search-form__button">
+            <button type="submit">検索</button>
         </div>
     </form>
 
     <div class="todo-table">
         <table class="todo-table__inner">
             <tr class="todo-table__row">
-                <th class="todo-table__header">Todo</th>
+                <th class="todo-table__header">
+                    <span class="todo-table__header-span">Todo</span>
+                    <span class="todo-table__header-span">カテゴリ</span>
+                </th>
             </tr>
             @foreach($todos as $todo)
             <tr class="todo-table__row">
@@ -45,6 +76,9 @@
                         <div class="update-form__item">
                             <input type="text" name="content" value="{{ $todo['content'] }}" class="update-form__item-input" />
                             <input type="hidden" name="id" value="{{ $todo['id'] }}">
+                        </div>
+                        <div class="update-form__item">
+                            <input class="update-form__item-input" type="text" name='name' value="{{ $todo->category['name']}}">
                         </div>
                         <div class="update-form__button">
                             <button type="submit" class="update-form__button-submit">更新</button>

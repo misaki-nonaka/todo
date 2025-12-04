@@ -12,23 +12,18 @@
     border: 1px solid #f5c2c7;
 }
 
-.message__error ul{
+.message__error ul {
     margin: 0;
 }
 
 
-.todo__content {
+.category__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
 }
 
-.section__title {
-    margin: 0 auto;
-    width: 70%;
-}
-
-.create-form, .search-form {
+.create-form {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -36,12 +31,12 @@
     margin-bottom: 15px;
 }
 
-.create-form__item, .search-form__item {
+.create-form__item {
     width: 70%;
     margin-right: 10px;
 }
 
-.create-form__item input, .search-form__item input{
+.create-form__item input {
     padding: 10px;
     width: 100%;
     border: 1px solid #ddd;
@@ -49,21 +44,11 @@
     height: 40px;
 }
 
-.create-form__item-select, .search-form__item-select {
-    padding: 10px;
-    width: 30%;
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    appearance: none;
-    margin-right: 10px;
-}
-
-.create-form__button, .search-form__button {
+.create-form__button {
     width: 20%;
 }
 
-.create-form__button button, .search-form__button button{
+.create-form__button button {
     padding: 10px;
     width: 100%;
     height: 40px;
@@ -74,32 +59,27 @@
     cursor: pointer;
 }
 
-.todo-table {
+.category-table {
     margin: 30px auto;
     width: 70%;
 }
 
-.todo-table__inner {
+.category-table__inner {
     width: 100%;
 }
 
-.todo-table__row {
+.category-table__row {
     border-bottom: 1px solid #ddd;
     padding: 10px;
 }
 
-.todo-table__header {
-    padding: 10px;
+.category-table__header {
     width: 20%;
     text-align: left;
-    font-weight: bold;
+    font-size: 24px;
 }
 
-.todo-table__header-span {
-    margin-right: 40%;
-}
-
-.todo-table__item:first-of-type {
+.category-table__item:first-of-type {
     padding: 12px;
     width: 90%;
 }
@@ -109,8 +89,9 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .update-form__item {
-    width: 40%;
+    width: 80%;
 }
 
 .update-form__item-input {
@@ -119,7 +100,8 @@
     outline: none;
 }
 
-.update-form__button-submit, .delete-form__button-submit {
+.update-form__button-submit,
+.delete-form__button-submit {
     width: 50px;
     height: 40px;
     color: #fff;
@@ -135,4 +117,3 @@
 .delete-form__button-submit {
     background: #ff0000;
 }
-
